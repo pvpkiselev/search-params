@@ -25,7 +25,6 @@ a:hover {
 body {
   margin: 0;
   display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
 }
@@ -39,28 +38,6 @@ h1 {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
-  text-align: center;
-}
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vanilla:hover {
-  filter: drop-shadow(0 0 2em #f7df1eaa);
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
 }
 
 button {
@@ -82,6 +59,60 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+.categories__list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.categories__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+}
+.categories__item:hover {
+  border-color: #646cff;
+}
+.categories__item:focus,
+.categories__item:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+.categories__label {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.6em;
+  cursor: pointer;
+}
+.categories__label input[type='checkbox']{
+  cursor: pointer;
+}
+.categories__text {
+  flex: 1;
+  text-align: center;
+}
+
+.selected-categories h2 {
+  margin-top: 4rem;
+}
+.selected-categories__list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
@@ -91,6 +122,10 @@ button:focus-visible {
     color: #747bff;
   }
   button {
+    background-color: #f9f9f9;
+  }
+
+  .categories__item {
     background-color: #f9f9f9;
   }
 }
