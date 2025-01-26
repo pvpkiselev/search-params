@@ -10,11 +10,11 @@ describe('renderSelectedList', () => {
 	});
 
 	it('should render selected categories into the container', () => {
-    const container = document.createElement('div');
-    renderSelectedList(['1', '2'], container);
+		const container = document.createElement('div');
+		renderSelectedList(['1', '2'], container);
 
-    expect(container.children.length).toBe(2);
-    expect(container.textContent).toContain('Категория 1');
-    expect(container.textContent).toContain('Категория 2');
-  });
+		expect(container.children.length).toBe(2);
+		expect(container.textContent).toContain('Категория 1');
+		expect(container.textContent).toContain('Категория 2');
+	});
 });

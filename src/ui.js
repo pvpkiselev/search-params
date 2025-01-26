@@ -16,9 +16,9 @@ export function renderSelectedList(selectedIds, container) {
 	container.innerHTML = '';
 
 	if (selectedIds.length === 0) {
-    container.textContent = 'Нет выбранных категорий';
-    return;
-  }
+		container.textContent = 'Нет выбранных категорий';
+		return;
+	}
 
 	const fragment = document.createDocumentFragment();
 
