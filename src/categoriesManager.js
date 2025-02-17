@@ -6,7 +6,7 @@ export function initCategoriesManager(categoriesList, selectedCategoriesList, ca
 
 	function updateCategoriesUI() {
 		renderCategories(categories, categoriesList, selectedIdsSet);
-		renderSelectedList(Array.from(selectedIdsSet), selectedCategoriesList);
+		renderSelectedList(selectedIdsSet, selectedCategoriesList);
 	}	
 
 	function handleCheckboxChange(categoryId, isChecked) {
@@ -14,9 +14,9 @@ export function initCategoriesManager(categoriesList, selectedCategoriesList, ca
 			selectedIdsSet.add(categoryId);
 		} else {
 			selectedIdsSet.delete(categoryId);
-    }
+		}
 
-		syncSelectedCategoriesWithURL(Array.from(selectedIdsSet));
+		syncSelectedCategoriesWithURL(selectedIdsSet);
 		updateCategoriesUI();
 	}
 
@@ -25,8 +25,8 @@ export function initCategoriesManager(categoriesList, selectedCategoriesList, ca
 	categoriesList.addEventListener('change', (event) => {
 		if (event.target.classList.contains('categories__checkbox')) {
 			const categoryId = event.target.dataset.id;
-			const isChecked = event.target.checked;
-			handleCheckboxChange(categoryId, isChecked);
+			const isChecked = selectedIdsSet.has(categoryId);
+			handleCheckboxChange(categoryId, !isChecked);
 		}
 	});
 }

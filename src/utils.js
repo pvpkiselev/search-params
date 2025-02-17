@@ -8,8 +8,8 @@ export function getSelectedCategoryIdsFromURL() {
 export function syncSelectedCategoriesWithURL(selectedCategories) {
 	const currentUrl = new URL(window.location);
 
-	if (selectedCategories.length > 0) {
-		currentUrl.searchParams.set('selectedCategories', selectedCategories.join(','));
+	if (selectedCategories.size > 0) {
+		currentUrl.searchParams.set('selectedCategories', Array.from(selectedCategories).join(','));
 	} else {
 		currentUrl.searchParams.delete('selectedCategories');
 	}

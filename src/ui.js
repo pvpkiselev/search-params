@@ -15,7 +15,7 @@ export function renderCategories(categories, container, selectedIds) {
 export function renderSelectedList(selectedIds, container) {
 	container.innerHTML = '';
 
-	if (selectedIds.length === 0) {
+	if (selectedIds.size === 0) {
 		container.textContent = 'Нет выбранных категорий';
 		return;
 	}
@@ -42,7 +42,6 @@ function createCategoryItem(id, name, isChecked) {
 	categoryCheckbox.id = `category-${id}`;
 	categoryCheckbox.classList.add('categories__checkbox');
 	categoryCheckbox.dataset.id = id;
-
 	categoryCheckbox.checked = isChecked;
 
 	const categoryText = document.createElement('span');
